@@ -6,10 +6,10 @@ import asyncio
 import os
 
 async def getweather():
-  async with python_weather.Client(unit=python_weather.IMPERIAL) as client:
+  async with python_weather.Client(unit=python_weather.METRIC) as client:
     place = 'Ashgabat'
     weather = await client.get(place)
-    print('Weather in ' + place + ': ' + str(weather.current.temperature) + "F, " + weather.current.description + ' and ' + str(weather.current.kind))
+    print('Weather in ' + place + ': ' + str(weather.current.temperature) + "C, " + weather.current.description + ' and ' + str(weather.current.kind))
     
 if __name__ == '__main__':
   if os.name == 'nt':
